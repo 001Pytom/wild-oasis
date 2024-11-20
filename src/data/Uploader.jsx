@@ -46,11 +46,14 @@ async function createBookings() {
     .from("guests")
     .select("id")
     .order("id");
-  const allGuestIds = guestsIds.map((cabin) => cabin.id);
+  console.log(guestsIds);
+  const allGuestIds = guestsIds.map((guest) => guest.id);
+
   const { data: cabinsIds } = await supabase
     .from("cabins")
     .select("id")
     .order("id");
+  // console.log(cabinsIds);
   const allCabinIds = cabinsIds.map((cabin) => cabin.id);
 
   const finalBookings = bookings.map((booking) => {

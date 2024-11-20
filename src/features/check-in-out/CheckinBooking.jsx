@@ -8,7 +8,9 @@ import Button from "../../ui/Button";
 import ButtonText from "../../ui/ButtonText";
 
 import { useMoveBack } from "../../hooks/useMoveBack";
-
+import { useBooking } from "../cabins/useBooking";
+import Spinner from "../../ui/Spinner";
+// eslint-disable-next-line
 const Box = styled.div`
   /* Box */
   background-color: var(--color-grey-0);
@@ -19,18 +21,23 @@ const Box = styled.div`
 
 function CheckinBooking() {
   const moveBack = useMoveBack();
-
-  const booking = {};
+  const { booking, isLoading } = useBooking();
 
   const {
     id: bookingId,
-    guests,
-    totalPrice,
-    numGuests,
-    hasBreakfast,
-    numNights,
+    // eslint-disable-next-line
+    // guests,
+    // // eslint-disable-next-line
+    // totalPrice,
+    // // eslint-disable-next-line
+    // numGuests,
+    // // eslint-disable-next-line
+    // hasBreakfast,
+    // // eslint-disable-next-line
+    // numNights,
   } = booking;
 
+  if (isLoading) return <Spinner />;
   function handleCheckin() {}
 
   return (
