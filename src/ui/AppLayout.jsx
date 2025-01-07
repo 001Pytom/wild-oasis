@@ -25,6 +25,7 @@ const Container = styled.div`
 `;
 function AppLayout() {
   return (
+    
     <StyledAppLayout>
       <Header />
       <Sidebar />
